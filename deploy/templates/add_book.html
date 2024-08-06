@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Book - Book Club</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Book</h1>
+        
+        <form method="POST">
+            <input type="text" name="title" placeholder="Book Title" required><br>
+            <select name="rating" required>
+                <option value="">Select Rating</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select><br>
+            <textarea name="comment" placeholder="Your Comment" required></textarea><br>
+            <textarea name="private_note" placeholder="Private Note (Only visible to you)"></textarea><br>
+            <input type="submit" value="Add Book">
+        </form>
+        
+        <a href="{{ url_for('profile', user_id=session['user_id']) }}" class="btn btn-secondary">Back</a>
+    </div>
+</body>
+</html>

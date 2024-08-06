@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Club</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="home-page">
+    <div class="home-container">
+        <h1 class="home-title">Welcome to Book Club</h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <div class="home-button-container">
+            <a href="{{ url_for('login') }}" class="home-btn home-btn-primary">Login</a>
+            <a href="{{ url_for('register') }}" class="home-btn home-btn-secondary">Register</a>
+        </div>
+    </div>
+</body>
+</html>

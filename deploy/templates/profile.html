@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile - Book Club</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Profile of {{ user['username'] }}</h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <p>Email: {{ user['email'] }}</p>
+        <h2>Books:</h2>
+        <ul id="book-list">
+            <!-- Books will be loaded here -->
+        </ul>
+        
+        {% if current_user['id'] == user['id'] %}
+            {% if current_user['username'] != 'admin' %}
+                <a href="{{ url_for('add_book') }}" class="btn btn-primary">Add New Book</a><br>
+            {% endif %}
+            <a href="{{ url_for('logout') }}" class="btn btn-secondary">Logout</a>
+        {% endif %}
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const isOwner = {{ 'true' if current_user['id'] == user['id'] else 'false' }};
+            fetch('/api/user/{{ user['id'] }}/books')
+                .then(response => response.json())
+                .then(books => {
+                    const bookList = document.getElementById('book-list');
+                    books.forEach(book => {
+                        const li = document.createElement('li');
+                        let bookHtml = `
+                            ${book.title} - Rating: ${book.rating}
+                            <p>Comment: ${book.comment}</p>
+                        `;
+                        if (isOwner && book.private_note) {
+                            bookHtml += `<p>Private Note: ${book.private_note}</p>`;
+                        }
+                        li.innerHTML = bookHtml;
+                        bookList.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+        </script>
+    </div>
+</body>
+</html>

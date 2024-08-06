@@ -1,0 +1,357 @@
+/* Общие стили */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* Стили для форм */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Стили для флэш-сообщений */
+.flash {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.flash.error {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.flash.success {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+/* Стили для списков */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для книг */
+.book-title {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.book-rating {
+    color: #f39c12;
+}
+
+.book-comment {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+.book-private-note {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-left: 3px solid #3498db;
+    margin-top: 10px;
+}
+
+/* Стили для главной страницы */
+.home-page {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.home-title {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.home-button-container {
+    margin-top: 40px;
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home-btn-primary {
+    background-color: #3498db;
+    color: #fff;
+    border: 2px solid #3498db;
+}
+
+.home-btn-primary:hover {
+    background-color: #fff;
+    color: #3498db;
+}
+
+.home-btn-secondary {
+    background-color: #2ecc71;
+    color: #fff;
+    border: 2px solid #2ecc71;
+}
+
+.home-btn-secondary:hover {
+    background-color: #fff;
+    color: #2ecc71;
+}
+
+/* Скрываем кнопки Login и Register на других страницах */
+body:not(.home-page) .home-button-container {
+    display: none;
+}
+/* Ваш существующий код остается без изменений */
+
+/* ... (весь ваш существующий код) ... */
+
+/* Дополнительные стили для других страниц */
+body:not(.home-page) {
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body:not(.home-page) .container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+body:not(.home-page) h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Улучшенные стили для форм на других страницах */
+body:not(.home-page) input[type="text"],
+body:not(.home-page) input[type="email"],
+body:not(.home-page) input[type="password"],
+body:not(.home-page) input[type="number"],
+body:not(.home-page) select,
+body:not(.home-page) textarea {
+    border-radius: 50px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+body:not(.home-page) input[type="submit"] {
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.home-page) input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Улучшенные стили для списков на других страницах */
+body:not(.home-page) li {
+    transition: all 0.3s ease;
+}
+
+body:not(.home-page) li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .container, 
+    body:not(.home-page) .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1, 
+    body:not(.home-page) h1 {
+        font-size: 2em;
+    }
+
+    .home-btn, 
+    body:not(.home-page) input[type="submit"] {
+        display: block;
+        margin: 10px auto;
+    }
+}
+/* ... (ваш существующий код) ... */
+
+/* Стили для книг */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.book-item * {
+    overflow-wrap: anywhere;
+}
+
+.book-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+.book-item {
+    /* Существующие стили */
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+.book-title,
+.book-rating,
+.book-comment,
+.book-private-note {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    white-space: normal;
+}
+
+.book-comment,
+.book-private-note {
+    max-height: 150px; /* Ограничение высоты */
+    overflow-y: auto; /* Добавление прокрутки при превышении высоты */
+}
+
+/* Общие стили для кнопок */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Специфические стили для разных типов кнопок */
+.btn-primary {
+    background-color: #3498db;
+}
+
+.btn-secondary {
+    background-color: #2ecc71;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+}
+
